@@ -1,5 +1,0 @@
-Site	Lat	Lon
-Esperanza	18.85	-97.37
-Pedregal	19.32	-99.19
-Teotihuacan	19.68	-98.86
-Tula	20.05	-99.35

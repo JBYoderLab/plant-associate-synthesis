@@ -2,6 +2,7 @@
 papers/
 data/raw/
 output/models/
+*DS_Store*
 
 # History files
 .Rhistory
