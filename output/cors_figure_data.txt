@@ -1,0 +1,67 @@
+"Meta"	"Pair"	"test"	"n"	"obs.cor"	"Intxn.type"	"Assoc.type"	"lo.95"	"up.95"	"lo.50"	"up.50"	"plotpos"
+"Individual correlations"	"Datura stramonium/Lema trilineata"	"IBD, plant"	6	0.314285714285714	"Antagonism"	"Insect"	-0.8	1	0	0.818181818181818	1
+"Individual correlations"	"Datura stramonium/Lema trilineata"	"IBD, assoc."	6	0.885714285714286	"Antagonism"	"Insect"	0	1	0.764705882352941	1	1
+"Individual correlations"	"Datura stramonium/Lema trilineata"	"Plant v. assoc."	6	0.657142857142857	"Antagonism"	"Insect"	-0.5	1	0.411764705882353	1	1
+"Individual correlations"	"Pinus banksiana/Arceuthobium americanum"	"IBD, plant"	56	0.30436812453846	"Antagonism"	"Microbe"	0.0421965568929782	0.549604266207388	0.222123108739854	0.398097105023262	2
+"Individual correlations"	"Pinus banksiana/Arceuthobium americanum"	"IBD, assoc."	56	0.0327030908287427	"Antagonism"	"Microbe"	-0.238642075660279	0.285605414709092	-0.0437713584319721	0.134761093758732	2
+"Individual correlations"	"Pinus banksiana/Arceuthobium americanum"	"Plant v. assoc."	56	0.281817139336389	"Antagonism"	"Microbe"	0.00319817858725718	0.517592061194527	0.194126368327588	0.36799965753382	2
+"Individual correlations"	"Pinus contorta/Arceuthobium americanum"	"IBD, plant"	39	-0.0580135671698695	"Antagonism"	"Microbe"	-0.360706930794696	0.26505766933931	-0.166351500295328	0.0572501552071855	3
+"Individual correlations"	"Pinus contorta/Arceuthobium americanum"	"IBD, assoc."	39	0.096653337105458	"Antagonism"	"Microbe"	-0.237217462733764	0.432385237847285	-0.0146941751993737	0.212822215201276	3
+"Individual correlations"	"Pinus contorta/Arceuthobium americanum"	"Plant v. assoc."	39	0.459162494537678	"Antagonism"	"Microbe"	0.161365940621346	0.699870253361102	0.362611213699865	0.541713124398481	3
+"Individual correlations"	"Populus angustifolia/Aceria parapopuli"	"IBD, plant"	45	0.804835469325581	"Antagonism"	"Insect"	0.662949346312227	0.893268261884651	0.760479040156202	0.841119762391879	4
+"Individual correlations"	"Populus angustifolia/Aceria parapopuli"	"IBD, assoc."	45	0.332195642984891	"Antagonism"	"Insect"	0.044959824777627	0.576183451581769	0.222662535144466	0.41888077587513	4
+"Individual correlations"	"Populus angustifolia/Aceria parapopuli"	"Plant v. assoc."	45	0.48903203654196	"Antagonism"	"Insect"	0.193736964734114	0.707845993042896	0.394529232584829	0.574254471179978	4
+"Individual correlations"	"Rhus chinensis/Schlectendalia chinensis"	"IBD, plant"	28	0.178434592227696	"Antagonism"	"Insect"	-0.248958897938743	0.535725830222048	0.0378607423405111	0.310368536853685	5
+"Individual correlations"	"Rhus chinensis/Schlectendalia chinensis"	"IBD, assoc."	28	0.19047619047619	"Antagonism"	"Insect"	-0.209498219695479	0.586827815111284	0.059704158746833	0.339749835388161	5
+"Individual correlations"	"Rhus chinensis/Schlectendalia chinensis"	"Plant v. assoc."	28	0.0706075533661741	"Antagonism"	"Insect"	-0.344527974486156	0.442571602810709	-0.0939689571011726	0.212267355947003	5
+"Individual correlations"	"Ficus hirta/Valisia spp"	"IBD, plant"	159	0.509869835204203	"Mutualism"	"Insect"	0.387445016649665	0.619932288626485	0.467968425550139	0.546667024345888	6
+"Individual correlations"	"Ficus hirta/Valisia spp"	"IBD, assoc."	159	0.350065679484117	"Mutualism"	"Insect"	0.188086594950495	0.49475898979348	0.30127488063363	0.403392277533421	6
+"Individual correlations"	"Ficus hirta/Valisia spp"	"Plant v. assoc."	159	0.0996596608550275	"Mutualism"	"Insect"	-0.0735073975819731	0.276661022369528	0.0412388489611268	0.163506219307038	6
+"Individual correlations"	"Ficus pumila/Wiebesia sp. 1"	"IBD, plant"	351	0.427768756688324	"Mutualism"	"Insect"	0.325194355277643	0.512532061078975	0.3922876741935	0.458126274345056	7
+"Individual correlations"	"Ficus pumila/Wiebesia sp. 1"	"IBD, assoc."	351	0.539808489084187	"Mutualism"	"Insect"	0.456547549062963	0.608769620751295	0.506615287961905	0.563245165528008	7
+"Individual correlations"	"Ficus pumila/Wiebesia sp. 1"	"Plant v. assoc."	351	0.226985023431782	"Mutualism"	"Insect"	0.125798092239101	0.315559700330673	0.191290103615588	0.255218212505569	7
+"Individual correlations"	"Hirtella physophora/Allmoerus decemarticulatus"	"IBD, plant"	10	0.272727272727273	"Mutualism"	"Insect"	-0.585220125786163	0.849258760107816	0.0566037735849057	0.516572304788865	8
+"Individual correlations"	"Hirtella physophora/Allmoerus decemarticulatus"	"IBD, assoc."	10	0.490909090909091	"Mutualism"	"Insect"	-0.229837553750597	0.883116883116883	0.263803680981595	0.666666666666667	8
+"Individual correlations"	"Hirtella physophora/Allmoerus decemarticulatus"	"Plant v. assoc."	10	0.272727272727273	"Mutualism"	"Insect"	-0.72736013986014	0.872611464968153	0.00628930817610063	0.527950310559006	8
+"Individual correlations"	"Lysimachia vulgaris/Macropis europaea"	"IBD, plant"	741	0.210659538266291	"Mutualism"	"Insect"	0.13613134212906	0.273654185892461	0.187073408578517	0.236109827703816	9
+"Individual correlations"	"Lysimachia vulgaris/Macropis europaea"	"IBD, assoc."	741	0.0584230552452995	"Mutualism"	"Insect"	-0.0130727730944678	0.127037693974474	0.0325825206297413	0.0821567923809915	9
+"Individual correlations"	"Lysimachia vulgaris/Macropis europaea"	"Plant v. assoc."	741	-0.140800260959149	"Mutualism"	"Insect"	-0.210038600299832	-0.0678971882207112	-0.163871289712981	-0.115617100616202	9
+"Individual correlations"	"Lysimachia vulgaris/Macropis fulvipes"	"IBD, plant"	78	0.553636237180541	"Mutualism"	"Insect"	0.361715646434552	0.701688521290256	0.485240289388753	0.602928286184034	10
+"Individual correlations"	"Lysimachia vulgaris/Macropis fulvipes"	"IBD, assoc."	78	0.180667433831991	"Mutualism"	"Insect"	-0.0454867880913984	0.399011088332324	0.100905711614187	0.256416748380925	10
+"Individual correlations"	"Lysimachia vulgaris/Macropis fulvipes"	"Plant v. assoc."	78	0.0501903160131008	"Mutualism"	"Insect"	-0.179610642483064	0.291124924180998	-0.0353795588094108	0.129523714617649	10
+"Individual correlations"	"Medicago lupulina/Ensifer medicae, E. meliloti"	"IBD, plant"	585	0.365774950224068	"Mutualism"	"Microbe"	0.287895014281716	0.439602154826535	0.341205364138038	0.389754503265699	11
+"Individual correlations"	"Medicago lupulina/Ensifer medicae, E. meliloti"	"IBD, assoc."	585	0.185335904099818	"Mutualism"	"Microbe"	0.10348302572054	0.266234092822962	0.153950835846194	0.21095010550278	11
+"Individual correlations"	"Medicago lupulina/Ensifer medicae, E. meliloti"	"Plant v. assoc."	585	-0.0137553262709167	"Mutualism"	"Microbe"	-0.0951244336085818	0.0685622914161192	-0.0447452486096009	0.00897754073569321	11
+"Individual correlations"	"Roridula gorgonius/Pameridea roridulae"	"IBD, plant"	36	0.670264567982925	"Mutualism"	"Insect"	0.388152884047368	0.827627529553381	0.593579976835574	0.739512356465215	12
+"Individual correlations"	"Roridula gorgonius/Pameridea roridulae"	"IBD, assoc."	36	0.74477439494199	"Mutualism"	"Insect"	0.556548064987096	0.842625525698631	0.688832538360523	0.777314543794239	12
+"Individual correlations"	"Roridula gorgonius/Pameridea roridulae"	"Plant v. assoc."	36	0.617872971427906	"Mutualism"	"Insect"	0.394105745751873	0.775847082439764	0.55043592831327	0.676964961448774	12
+"Individual correlations"	"Silene latifolia/Hadena bicruris"	"IBD, plant"	36	0.257242197636091	"Mutualism"	"Insect"	-0.12365960790063	0.615714742137095	0.13960966928015	0.390409817207545	13
+"Individual correlations"	"Silene latifolia/Hadena bicruris"	"IBD, assoc."	36	0.20349029511143	"Mutualism"	"Insect"	-0.149964942389124	0.529215041601953	0.0747081192607719	0.317354916822342	13
+"Individual correlations"	"Silene latifolia/Hadena bicruris"	"Plant v. assoc."	36	0.384010842570851	"Mutualism"	"Insect"	0.042720743645702	0.643103354092783	0.273183553171476	0.482743071919472	13
+"Individual correlations"	"Vachellia drepanolobium/Crematogaster nigriceps"	"IBD, plant"	6	-0.0869656553478673	"Mutualism"	"Insect"	-1	1	-0.5	0.447811075519899	14
+"Individual correlations"	"Vachellia drepanolobium/Crematogaster nigriceps"	"IBD, assoc."	6	-0.0285714285714286	"Mutualism"	"Insect"	-1	1	-0.454545454545455	0.529411764705882	14
+"Individual correlations"	"Vachellia drepanolobium/Crematogaster nigriceps"	"Plant v. assoc."	6	0.985610760609162	"Mutualism"	"Insect"	0.866025403784439	1	0.954863710632231	1	14
+"Individual correlations"	"Vachellia drepanolobium/Tetraponera penzigi"	"IBD, plant"	6	-0.0869656553478673	"Mutualism"	"Insect"	-1	1	-0.515151515151515	0.447811075519899	15
+"Individual correlations"	"Vachellia drepanolobium/Tetraponera penzigi"	"IBD, assoc."	6	-0.371428571428571	"Mutualism"	"Insect"	-1	0.8	-0.818181818181818	-0.032258064516129	15
+"Individual correlations"	"Vachellia drepanolobium/Tetraponera penzigi"	"Plant v. assoc."	6	0.637748139217693	"Mutualism"	"Insect"	-0.317083044382663	1	0.387662214818815	0.935483870967742	15
+"Individual correlations"	"Yucca brevifolia/Tegeticula synthetica"	"IBD, plant"	55	0.441530330705498	"Mutualism"	"Insect"	0.199877249649427	0.636680043476835	0.364405267665685	0.516967363557686	16
+"Individual correlations"	"Yucca brevifolia/Tegeticula synthetica"	"IBD, assoc."	55	0.16659752162742	"Mutualism"	"Insect"	-0.131767175382818	0.449137725299371	0.0683184128503953	0.26246316736969	16
+"Individual correlations"	"Yucca brevifolia/Tegeticula synthetica"	"Plant v. assoc."	55	0.411089866156788	"Mutualism"	"Insect"	0.168913614405022	0.614746124674954	0.332954103099496	0.493567241835996	16
+"Individual correlations"	"Yucca jaegeriana/Tegeticula antithetica"	"IBD, plant"	91	0.471173753782449	"Mutualism"	"Insect"	0.288952527002561	0.618018943860315	0.40909018438967	0.525014678713097	17
+"Individual correlations"	"Yucca jaegeriana/Tegeticula antithetica"	"IBD, assoc."	91	0.316312596402167	"Mutualism"	"Insect"	0.0890531756386712	0.493934999766703	0.240596216860635	0.380209348041849	17
+"Individual correlations"	"Yucca jaegeriana/Tegeticula antithetica"	"Plant v. assoc."	91	0.115631658664125	"Mutualism"	"Insect"	-0.10543009494409	0.313967122555865	0.0353378767169868	0.182128929656379	17
+"Pooled"	"Mutualisms"	"IBD, plant"	12	0.415317950823594	"Mutualism"	"Both"	0.321537638380943	0.501029823145709	NA	NA	2
+"Pooled"	"Mutualisms"	"IBD, assoc."	12	0.30502927889709	"Mutualism"	"Both"	0.155470314377024	0.440917874926607	NA	NA	2
+"Pooled"	"Mutualisms"	"Plant v. assoc."	12	0.221466807898648	"Mutualism"	"Both"	0.0726723945942149	0.360617350727968	NA	NA	2
+"Pooled"	"Antagonisms"	"IBD, plant"	5	0.367121647954365	"Antagonism"	"Both"	-0.0801526181945105	0.691335562702191	NA	NA	1
+"Pooled"	"Antagonisms"	"IBD, assoc."	5	0.203277655353008	"Antagonism"	"Both"	-0.0137450397058479	0.402010058931143	NA	NA	1
+"Pooled"	"Antagonisms"	"Plant v. assoc."	5	0.359149017718948	"Antagonism"	"Both"	0.197635981792469	0.501677908928669	NA	NA	1
+"Pooled"	"Insects"	"IBD, plant"	14	0.450814624623065	NA	"Insect"	0.326403410376481	0.559872164392311	NA	NA	2
+"Pooled"	"Insects"	"IBD, assoc."	14	0.330813768206773	NA	"Insect"	0.167098331376793	0.476775903521854	NA	NA	2
+"Pooled"	"Insects"	"Plant v. assoc."	14	0.291171889007579	NA	"Insect"	0.124265571534314	0.442054385600364	NA	NA	2
+"Pooled"	"Microbes"	"IBD, plant"	3	0.248079669261777	NA	"Microbe"	0.0197117532562692	0.451845421033014	NA	NA	1
+"Pooled"	"Microbes"	"IBD, assoc."	3	0.16878781800057	NA	"Microbe"	0.0944725282990079	0.241232392986027	NA	NA	1
+"Pooled"	"Microbes"	"Plant v. assoc."	3	0.224361242035536	NA	"Microbe"	-0.0916439641803005	0.499312189599895	NA	NA	1
+""	"Global"	"IBD, plant"	17	0.408725848099695	NA	"Both"	0.310093045421749	0.498653773174581	NA	NA	1.5
+""	"Global"	"IBD, assoc."	17	0.28310836339791	NA	"Both"	0.157519103473303	0.399685411310485	NA	NA	1.5
+""	"Global"	"Plant v. assoc."	17	0.262476255888663	NA	"Both"	0.131838815949631	0.384151956464361	NA	NA	1.5

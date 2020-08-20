@@ -1,0 +1,599 @@
+round(ex5/35,2)*100
+library(conStruct)
+library("conStruct")
+library(conStruct)
+library(devtools)
+require(devtools)
+install.packages("devtools")
+install.packages("tidyverse")
+library(devtools)
+install_github("gbradburd/conStruct/code/conStruct",build_vignettes=TRUE)
+vignette(topic="format-data",package="conStruct")
+vignette(topic="run-conStruct",package="conStruct")
+?conStruct
+library(conStruct)
+?conStruct
+sample(ALPHA)
+dat1 = read.csv("~/Documents/Academic/Active_projects/data/yucca/Pellmyr&Huth1994_fig01a", h=T, sep="\t")
+dat2 = read.csv("~/Documents/Academic/Active_projects/data/yucca/Pellmyr&Huth1994_fig01b", h=T, sep="\t")
+dat1 = read.csv("~/Documents/Academic/Active_projects/data/yucca/Pellmyr&Huth1994_fig01a.txt", h=T, sep="\t")#
+dat2 = read.csv("~/Documents/Academic/Active_projects/data/yucca/Pellmyr&Huth1994_fig01b.txt", h=T, sep="\t")
+dat1
+dat2
+ggplot(dat1, aes(x=Num_eggs, y=Prop_retained)) + geom_bar()
+require("tidyverse")#
+#
+source("~/Documents/Academic/Active_projects/shared/Rscripts/base.R") # my special mix of personal functions#
+source("~/Documents/Academic/Active_projects/shared/Rscripts/base_graphics.R")
+ggplot(dat1, aes(x=Num_eggs, y=Prop_retained)) + geom_bar()
+ggplot(dat1, aes(x=Num_eggs, y=Prop_retained)) + geom_barplot()
+ggplot(dat1, aes(x=Num_eggs, y=Prop_retained)) + geom_point()
+?geom_bar
+ggplot(dat1, aes(x=Num_eggs, y=Prop_retained)) + geom_bar()
+ggplot(dat1, aes(x=Num_eggs, y=Prop_retained)) + geom_bar(stat="identity")
+A <- sample(1:10, 10)
+A
+B <- sample(25:42, 10)
+A
+B
+A*B
+A+B
+5*B
+sapply(A, function(x) x*B)
+sapply(A, function(x) x*B[1:5])
+require("tidyverse")#
+#
+source("~/Documents/Academic/Active_projects/shared/Rscripts/base.R") # my special mix of personal functions#
+source("~/Documents/Academic/Active_projects/shared/Rscripts/base_graphics.R")
+dat = read.csv("/Users/jyoder/Documents/Academic/2018/2018_teaching/Evolution/grades/presentations.tsv", h=T, sep="\t")
+head(dat)
+unique(dat$Evaluation.by)
+dat = read.csv("/Users/jyoder/Documents/Academic/2018/2018_teaching/Evolution/grades/presentations.tsv", h=T, sep="\t", strip.white=TRUE)
+head(dat)
+unique(dat$Evaluation.by)
+dim(dat)
+dat$totals <- apply(dat[,5:12], 2, sum)
+apply(dat[,5:12], 2, sum)
+dat$totals <- apply(dat[,5:12], 1, sum)
+dat$full.name = paste(dat[,3],dat[,4], collapse=" ")
+grades <- dat %>% select(Evaluation.by,Presenter.last.name,full.name,totals)
+head(grades)
+dat <- read.csv("/Users/jyoder/Documents/Academic/2018/2018_teaching/Evolution/grades/presentations.tsv", h=T, sep="\t", strip.white=TRUE)#
+#
+head(dat)#
+dim(dat)#
+unique(dat$Evaluation.by)#
+#
+dat$totals <- apply(dat[,5:12], 1, sum)#
+#
+dat$full.name <- paste(dat[,3],dat[,4], sep=" ")
+head(dat)
+grades <- dat %>% select(Evaluation.by,Presenter.last.name,full.name,totals) %>%
+grades <- dat %>% select(Evaluation.by,Presenter.last.name,full.name,totals)
+head(grades)
+?spread
+dat <- read.csv("/Users/jyoder/Documents/Academic/2018/2018_teaching/Evolution/grades/presentations.tsv", h=T, sep="\t", strip.white=TRUE)#
+#
+head(dat)#
+dim(dat)#
+unique(dat$Evaluation.by)#
+#
+dat$total <- apply(dat[,5:12], 1, sum)#
+#
+dat$full.name <- paste(dat[,3],dat[,4], sep=" ")#
+#
+grades <- dat %>% select(Evaluation.by,Presenter.last.name,full.name,total) %>% group_by(full.name) %>% summarize(mean.score=mean(total), n.score=count_n())
+grades <- dat %>% select(Evaluation.by,Presenter.last.name,full.name,total) %>% group_by(full.name) %>% summarize(mean.score=mean(total), n.score=count())
+grades <- dat %>% select(Evaluation.by,Presenter.last.name,full.name,total) %>% group_by(full.name) %>% summarize(mean.score=mean(total), n.score=count(total))
+grades <- dat %>% select(Evaluation.by,Presenter.last.name,full.name,total) %>% group_by(full.name) %>% summarize(mean.score=mean(total), n.score=length(total))
+head(grades)
+length(which(grades$n.score != 2))
+filter(grades, n.score != 2)
+dat <- read.csv("/Users/jyoder/Documents/Academic/2018/2018_teaching/Evolution/grades/presentations.tsv", h=T, sep="\t", strip.white=TRUE)#
+#
+head(dat)#
+dim(dat)#
+unique(dat$Evaluation.by)#
+#
+dat$total <- apply(dat[,5:12], 1, sum)#
+#
+dat$full.name <- paste(dat[,3],dat[,4], sep=" ")#
+#
+grades <- dat %>% select(Evaluation.by,Presenter.last.name,full.name,total) %>% group_by(full.name) %>% summarize(mean.score=mean(total), n.score=length(total))#
+#
+filter(grades, n.score != 2)
+grades
+ggplot(grades, aes(x=mean.score)) + geom_histogram()
+dat.spr <- dat %>% select(Evaluation.by,Presenter.last.name,full.name,total) %>% spread(Evaluation.by,total)
+head(dat.spr)
+dat.spr <- dat %>% select(Evaluation.by,Presenter.last.name,full.name,total) %>% spread(Evaluation.by,total) %>% rename(Alby=`Alby Dang`)
+head(dat.spr)
+cor.test(~jby+Alby, data=dat.spr)
+cor.test(~Jby+Alby, data=dat.spr)
+ggplot(dat.spr, aes(x=Jby, y=Alby)) + geom_smooth(method="lm") + geom_point()
+ggplot(dat.spr, aes(x=Jby, y=Alby)) + geom_abline(intercept=0, slope=1) + geom_smooth(method="lm") + geom_point()
+grades
+grades <- dat %>% select(Evaluation.by,Presenter.last.name,full.name,total) %>% arrange(Presenter.last.name) %>% group_by(full.name) %>% summarize(mean.score=mean(total), n.score=length(total))
+grades
+grades <- dat %>% select(Evaluation.by,Presenter.last.name,full.name,total) %>% group_by(full.name) %>% arrange(Presenter.last.name) %>% summarize(mean.score=mean(total), n.score=length(total))
+grades
+grades <- dat %>% select(Evaluation.by,Presenter.last.name,full.name,total) %>% group_by(full.name, Presenter.last.name) %>% arrange(Presenter.last.name) %>% summarize(mean.score=mean(total), n.score=length(total))
+grades
+grades <- dat %>% select(Evaluation.by,Presenter.last.name,full.name,total) %>% group_by(full.name, Presenter.last.name) %>% arrange(desc(Presenter.last.name)) %>% summarize(mean.score=mean(total), n.score=length(total))
+grades
+grades <- dat %>% select(Evaluation.by,Presenter.last.name,full.name,total) %>% group_by(full.name, Presenter.last.name) %>% summarize(mean.score=mean(total), n.score=length(total)) %>% arrange(desc(Presenter.last.name))
+grades
+grades <- dat %>% select(Evaluation.by,Presenter.last.name,full.name,total) %>% group_by(full.name, Presenter.last.name) %>% summarize(mean.score=mean(total), n.score=length(total)) %>% arrange(Presenter.last.name)
+grades
+write.table(grades, "/Users/jyoder/Documents/Academic/2018/2018_teaching/Evolution/grades/presentation_compiled_grades.tsv", sep="/t")
+write.table(grades, "/Users/jyoder/Documents/Academic/2018/2018_teaching/Evolution/grades/presentation_compiled_grades.txt", sep="/t", row.names=FALSE, col.names=TRUE)
+write.table(grades, "/Users/jyoder/Documents/Academic/2018/2018_teaching/Evolution/grades/presentation_compiled_grades.txt", sep="\t", row.names=FALSE, col.names=TRUE)
+dat <- read.csv("/Users/jyoder/Documents/Academic/2018/2018_teaching/Evolution/grades/presentations.tsv", h=T, sep="\t", strip.white=TRUE)#
+#
+head(dat)#
+dim(dat)#
+unique(dat$Evaluation.by)#
+#
+dat$total <- apply(dat[,5:12], 1, sum)#
+#
+dat$full.name <- paste(dat[,3],dat[,4], sep=" ")#
+#
+dat.spr <- dat %>% select(Evaluation.by,Presenter.last.name,full.name,total) %>% spread(Evaluation.by,total) %>% rename(Alby=`Alby Dang`)#
+#
+head(dat.spr)#
+#
+cor.test(~Jby+Alby, data=dat.spr) #
+#
+ggplot(dat.spr, aes(x=Jby, y=Alby)) + geom_abline(intercept=0, slope=1) + geom_smooth(method="lm") + geom_point()#
+grades <- dat %>% select(Evaluation.by,Presenter.last.name,full.name,total) %>% group_by(full.name, Presenter.last.name) %>% summarize(mean.score=mean(total), n.score=length(total)) %>% arrange(Presenter.last.name)#
+#
+grades#
+#
+ggplot(grades, aes(x=mean.score)) + geom_histogram()#
+#
+write.table(grades, "/Users/jyoder/Documents/Academic/2018/2018_teaching/Evolution/grades/presentation_compiled_grades.txt", sep="\t", row.names=FALSE, col.names=TRUE)
+names<-c("Andrea Lopez", "Mariam Aghababyan", "Nahal Ansari", "Nashla Lagos", "Narine Nazinyan", "Andrew Canseco", "Anas Khan", "Erika Artman", "Kristine Khashaki", "Giancarlo Gomez", "Brian Diaz", "Jackeline Vega", "Siranush Davtyan", "Cynthia Guerrero", "Rabia Billoo", "Ninet Gharibiansaki", "Michelle Gutierrez", "Shelly Garcia-Rodriguez", "Jacqueline Magtesyan", "Clarissa Nassar", "Kendra Tapia", "Michelle Bravo", "Melanie Jensen", "Svetlana Ambartsumyan", "Stephanie Castellanos", "Muthu Malavika Sugumar", "Oscar Castaneda", "Diana Mendez", "Kristin Andonian", "Janine Alexa De Leon", "Michelle Rigsby", "Alexander Feldman", "Peter Nahas", "Andrew Morrow", "Maria Martone", "Edmond Gevondyan", "Alice Kang", "Chanel Jacobo", "Kimberly Luna", "Rena Partamian", "Natta Narkmanee", "Jemmilyn Lintag", "Cameron Rorick", "Alfonso Avalos", "Angelica Mae Pomares", "Andrea Canahui", "Andrew St Julian", "Mary Sulyan", "Jacqueline Vasquez-Solano", "Angel Zamora", "Lesley Garcia", "Jamie Calumpiano", "Russell Ayos", "Jus
+tin Alfaro", "Diana Sulyman", "Nikole Pouri", "David Aguilera", "Manuel Fierro", "Bishoy Ashak", "Alondra Davalos", "Romulo Dinsay", "Melanie Marquez", "Rebecca Escobar", "Erika Perez", "Grigor Nargizyan", "Aliyah Spears", "Lauren Schirmer", "Michelle Batugo", "Jasmine Barragan", "Andy Moran", "Sarah Dean", "Michelle Rigsby")
+christian <- gsub("(\\w+) \\w+", "\\1", names)
+christian
+sur <- gsub("\\w+ (\\w+)", "\\1", names)
+sur
+sur <- gsub("\\w+ (.+)", "\\1", names)
+sur
+christian <- gsub("(\\w+) .+", "\\1", names)
+christian
+paste(christian, collapse="\n")
+cat(christian, collapse="\n")
+cat(christian, sep="\n")
+cat(sur, sep="\n")
+plf <- read.csv("/Users/jyoder/Documents/Academic/2018/2018_teaching/Evolution/grades/PL-vs-grades_Yoder-322.csv")
+head(plf)
+t.test(Unposted.Final.Score~PL.session, data=plf)
+ggplot(plf, aes(x=Unposted.Final.Score, color=PL.session)) + geom_histogram()
+require("tidyverse")
+ggplot(plf, aes(x=Unposted.Final.Score, color=PL.session)) + geom_histogram()
+ggplot(plf, aes(x=Unposted.Final.Score, fill=PL.session)) + geom_histogram()
+require(tidyverse)#
+	hug <- read.csv("/Users/jyoder/Documents/Academic/Active_projects/Biotic-v-abiotic-LA/data/raw_data/Hughes2017_surival.csv", h=TRUE)#
+	head(hug)
+hug <- read.csv("/Users/jyoder/Documents/Academic/Active_projects/Biotic-v-abiotic-LA/data/raw_data/Hughes2017_survival.csv", h=TRUE)
+head(hug)
+hug <- read.csv("/Users/jyoder/Documents/Academic/Active_projects/Biotic-v-abiotic-LA/data/raw_data/Hughes2017_survival.csv", h=TRUE)
+hug %>% gather("Predation", "resid", 16:17)
+dat <- hug %>% gather("Predation", "resid", 16:17) %>% group_by(site, Cohort) %>% summarize(mnSurv = mean(resid), seSurv = sd(resid)/sqrt(length(resid)), nSurv = length(resid), sdSurv = sd(resid))
+dat <- hug %>% gather("Predation", "resid", 16:17) %>% group_by(Site, Cohort) %>% summarize(mnSurv = mean(resid), seSurv = sd(resid)/sqrt(length(resid)), nSurv = length(resid), sdSurv = sd(resid))
+head(dat)
+dat <- hug %>% gather("Predation", "resid", 16:17) %>% group_by(Site, Cohort, Predation) %>% summarize(mnSurv = mean(resid), seSurv = sd(resid)/sqrt(length(resid)), nSurv = length(resid), sdSurv = sd(resid))
+head(dat)
+hug <- read.csv("/Users/jyoder/Documents/Academic/Active_projects/Biotic-v-abiotic-LA/data/raw_data/Hughes2017_survival.csv", h=TRUE)
+dat <- hug %>% gather("Predation", "resid", 16:17) %>% group_by(Site, Cohort, Predation) %>% summarize(mnSurv = mean(resid), seSurv = sd(resid)/sqrt(length(resid)), nSurv = length(resid), sdSurv = sd(resid))
+head(dat)
+hug <- read.csv("/Users/jyoder/Documents/Academic/Active_projects/Biotic-v-abiotic-LA/data/raw_data/Hughes2017_survival.csv", h=TRUE)
+head(hug)
+hug <- read.csv("/Users/jyoder/Documents/Academic/Active_projects/Biotic-v-abiotic-LA/data/raw_data/Hughes2017_survival.csv", h=TRUE)
+dat <- hug %>% gather("Predation", "resid", 16:17) %>% group_by(Site, Cohort, Predation) %>% summarize(mnSurv = mean(resid), seSurv = sd(resid)/sqrt(length(resid)), nSurv = length(resid), sdSurv = sd(resid))
+head(dat)
+write.table(dat, "~/Documents/Academic/Active_projects/Biotic-v-abiotic-LA/data/raw_data/Hughes2017_processed.csv", sep=",", col.names=TRUE, row.names=FALSE)
+par <- read.csv("~/Documents/Academic/Active_projects/Biotic-v-abiotic-LA/data/raw_data/Parain2016_data.txt", h=TRUE, sep="\t")
+head(par)
+dat <- par %>% group_by(origin,pred,temp) %>% summarize(x = mean(bac.density), se=sd(bac.density)/2, n=4, sd=sd(bac.density))
+head(dat)
+write.csv(dat, "~/Documents/Academic/Active_projects/Biotic-v-abiotic-LA/data/raw_data/Parain2016_processed.txt", sep="\t", col.names=TRUE, row.names=FALSE)
+write.table(dat, "~/Documents/Academic/Active_projects/Biotic-v-abiotic-LA/data/raw_data/Parain2016_processed.txt", sep="\t", col.names=TRUE, row.names=FALSE)
+library(MASS)#
+library(gdata)#
+library(aster)#
+library(lattice)#
+library(bbmle)#
+library(plotrix)
+install.packages("gdata")
+install.packages("aster")
+install.packages("bbmle")
+library(MASS)#
+library(gdata)#
+library(aster)#
+library(lattice)#
+library(bbmle)#
+library(plotrix)
+CfE3data <- read.csv("~/Documents/Academic/Active_projects/Biotic-v-abiotic-LA/data/raw_data/Stanton-Geddes2012_CfE3_fitness_herbivory.csv", na.string = "?")
+str(CfE3data)#
+levels(CfE3data$site)#
+table(CfE3data$trt, CfE3data$site)
+CfE3data$block <- as.factor(CfE3data$block)#
+CfE3data$patch <- as.factor(CfE3data$patch)#
+CfE3data$p.pos <- as.factor(CfE3data$p.pos)#
+CfE3data$fam <- as.factor(CfE3data$fam)#
+# Change to site and pop to ordered factor#
+# Order sites Beyond.W, W.Edge, Interior, N.Edge, Beyond.N#
+CfE3data$site <- ordered(CfE3data$site, levels = c("CPBS","RNHA", "CERA", "SCRS", "SCRSb",#
+   "ACNW"))#
+# Order pops from south to north in latitude  #
+CfE3data$pop <- ordered(CfE3data$pop, levels = c("TYS", "KZA", "GRE", "CRA", "GCD"))#
+#
+# Change herbivory and disease.category to factors#
+CfE3data$herbivory.category <- as.factor(CfE3data$herbivory.category)#
+CfE3data$disease.category <- as.factor(CfE3data$disease.category)
+CfE3data$fsurv <- ifelse(CfE3data$fall.stage > 0, 1, 0)#
+#
+# Create column for "anypods"#
+CfE3data$anypods <- ifelse(CfE3data$seed.pods > 0, 1, 0)#
+# CfE3data[1000:1100,]#
+summary(CfE3data)#
+# 1 NA for p.pos#
+which(is.na(CfE3data$p.pos))#
+CfE3data[1829,]#
+# Mistake in planting - lost seed #1 in put second seed in position #2. Remove this entry from dataframe#
+CfE3data_clean <- CfE3data[-1829,]
+which(is.na(CfE3data_clean$esurv))#
+CfE3data_clean[which(is.na(CfE3data_clean$esurv)), 1:12]#
+# These are all true missing data; seeds dropped while planting#
+# Remove from data frame#
+CfE3data_clean <- CfE3data_clean[-which(is.na(CfE3data_clean$esurv) != is.na(CfE3data_clean$id)),]#
+str(CfE3data_clean)
+str(CfE3data)
+check_fall.stage <- which(CfE3data_clean$esurv == 0 & CfE3data_clean$fall.stage > 0)#
+CfE3data_clean[check_fall.stage, 1:15]#
+#
+# These are cases where a plant germinated after I first checked it.  Change esurv to 1#
+# The fact that they germinated late is captured in differences in later life-history stages#
+#
+CfE3data_clean[which(CfE3data_clean$esurv == 0 & CfE3data_clean$fall.stage > 0), "esurv"] <- 1#
+CfE3data_clean[check_fall.stage, 1:15]
+check_july.stage <- which(CfE3data_clean$esurv == 0 & CfE3data_clean$july.stage > 0)#
+CfE3data_clean[check_july.stage, 1:15]#
+#
+# Seeds that germinated after first check, but died before end of season. Change esurv to 1#
+CfE3data_clean[which(CfE3data_clean$esurv == 0 & CfE3data_clean$july.stage > 0), "esurv"] <- 1#
+CfE3data_clean[check_july.stage, 1:15]#
+#
+## Are there any plants with july.stage == 0 but fall.stage > 0?#
+check_midseason.stage <- which(CfE3data_clean$july.stage == 0 & CfE3data_clean$fall.stage > 0)#
+CfE3data_clean[check_midseason.stage, 1:15]
+CfE3data_clean[which(CfE3data_clean$july.stage == 0 & CfE3data_clean$fall.stage > 0), "july.stage"] <- 1#
+CfE3data_clean[check_midseason.stage, 1:15]#
+# Also need to change mid-season measurements to "NA"#
+CfE3data_clean[check_midseason.stage, "july.height"] <- NA#
+CfE3data_clean[check_midseason.stage, "july.leaf"] <- NA#
+CfE3data_clean[check_midseason.stage, "herbivory.category"] <- NA#
+CfE3data_clean[check_midseason.stage, "disease.category"] <- NA#
+CfE3data_clean[check_midseason.stage, 1:15]
+check_pods <- which(CfE3data_clean$fall.stage == 0 & CfE3data_clean$seed.pods > 0)#
+CfE3data_clean[check_pods,]#
+# None...good.#
+#
+# Check distribution of pods#
+range(CfE3data_clean$seed.pods)#
+hist(CfE3data_clean$seed.pods)#
+# lots of zeros...#
+CfE3pods.data <- subset(CfE3data_clean, seed.pods > 0, )#
+str(CfE3pods.data)#
+# Only 196 plants out of 3600 planted produced pods#
+#
+hist(CfE3pods.data$seed.pods)#
+# Probably should fit with a negative binomial distribution...looks over-dispersed for poisson#
+hist(rnbinom(200, 1, .05))
+(esurv.by.site.trt <- with(CfE3data_clean, tapply(esurv, list(trt, site), mean, #
+  na.rm = TRUE)))#
+(esurv.by.pop.site <- with(CfE3data_clean, tapply(esurv, list(pop, site), mean, #
+  na.rm = TRUE)))#
+#
+## Examine fsurv#
+# overall#
+(overall.fsurv.by.site.trt <- with(CfE3data_clean, tapply(fsurv, list(trt, site), mean, #
+  na.rm = TRUE)))  #
+# given esurv == 1#
+CfE3_esurv <- subset(CfE3data_clean, esurv == 1, )#
+str(CfE3_esurv)#
+(fsurv.by.site.trt <- with(CfE3_esurv, tapply(fsurv, list(trt, site), mean, #
+  na.rm = TRUE))) #
+#
+## Examine anypods overall#
+(overall.anypods.by.site.trt <- with(CfE3data_clean, tapply(anypods, #
+  list(trt, site), mean, na.rm = TRUE)))  #
+# Examine anypods given fsurv == 1   #
+CfE3_fsurv <- subset(CfE3data_clean, fsurv == 1, )#
+str(CfE3_fsurv)#
+(anypods.by.site.trt <- with(CfE3_fsurv, tapply(anypods, list(trt, site), mean, #
+  na.rm = TRUE))) #
+#
+## Examine pods overall#
+# by site and pop #
+(pods.by.site.pop <- with(CfE3data_clean, tapply(seed.pods, #
+  list(site, pop), mean, na.rm = TRUE)))#
+# by site and trt#
+(pods.by.site.trt <- with(CfE3data_clean, tapply(seed.pods, #
+  list(trt, site), mean, na.rm = TRUE)))#
+# examine pods produced given survival by site and treatment#
+(pods.by.site.pop.survived <- with(CfE3pods.data, tapply(seed.pods, list(pop, site),#
+  mean, na.rm = TRUE)))#
+(num.by.site.pop.survived <- table(CfE3pods.data$site,CfE3pods.data$pop))#
+#
+(pods.by.site.trt.survived <- with(CfE3pods.data, tapply(seed.pods, list(trt, site),#
+  mean, na.rm = TRUE)))#
+# Calculate standard errors for this#
+# Number#
+(num.by.site.trt.survived <- table(CfE3pods.data$site,CfE3pods.data$trt))#
+# Standard deviation#
+(sd.by.site.trt.survived <- with(CfE3pods.data, tapply(seed.pods, list(site, trt), sd, na.rm = TRUE)))#
+# Calculate standard error#
+(se.by.site.trt.survived <- sd.by.site.trt.survived/sqrt(num.by.site.trt.survived))
+plot(CfE3pods.data$july.height, CfE3pods.data$seed.pods)
+CfE3pods.data[which(CfE3pods.data$july.height == 0 & CfE3pods.data$seed.pods > 0),]#
+#
+missingheight <- which(CfE3pods.data$july.height == 0 & CfE3pods.data$seed.pods > 0)#
+#
+# Missing height data.  Change from zero to NA#
+CfE3pods.data[missingheight, "july.height"] <- NA#
+#
+CfE3pods.data[missingheight, ]#
+#
+cor.test(CfE3pods.data$july.height, CfE3pods.data$seed.pods)#
+# r = 0.494#
+# r2 = 0.24#
+# not very high...#
+#
+# Change missing height data to NA in full data#
+#
+missingheight2 <- which(CfE3data_clean$july.height == 0 & CfE3data_clean$seed.pods > 0)#
+CfE3data_clean[missingheight2, "july.height"] <- NA
+missingfallstage <- which(CfE3data_clean$fall.stage < 2 & CfE3data_clean$seed.pods > 0)#
+CfE3data_clean[missingfallstage, ]#
+# Mistake in data entry, change to "3" for flowers and fruits#
+CfE3data_clean[missingfallstage, "fall.stage"] <- 3
+str(CfE3data)
+levels(CfE3data$site)
+table(CfE3data$trt, CfE3data$site)
+head(CfE3data)
+require(tidyverse)
+head(CfE3data)
+dat <- CfE3data %>% filter(july.stage!=0)
+dim(dat)
+dat <- CfE3data %>% select(site, trt, pop, seed.pods) %>% group_by(site, pop, trt) %>% summary(x=mean(seed.pods), se=sd(seed.pods)/sqrt(length(seed.pods)), n=length(seed.pods), sdPods=sd(seed.pods))
+head(dat)
+dat <- CfE3data %>% select(site, trt, pop, seed.pods) %>% group_by(site, pop, trt) %>% summarize(x=mean(seed.pods), se=sd(seed.pods)/sqrt(length(seed.pods)), n=length(seed.pods), sdPods=sd(seed.pods))
+head(dat)
+write.table(dat, "~/Documents/Academic/Active_projects/Biotic-v-abiotic-LA/data/raw_data/Stanton-Geddes2012_CfE3_fitness_herbivory_processed.csv", sep="\t", col.names=TRUE, row.names=FALSE)
+write.table(dat, "~/Documents/Academic/Active_projects/Biotic-v-abiotic-LA/data/raw_data/Stanton-Geddes2012_CfE3_fitness_herbivory_processed.txt", sep="\t", col.names=TRUE, row.names=FALSE)
+require(bipartite)#
+library(codependent)#
+library(igraph)#
+library(reshape)#
+library(stringr)#
+#
+library(tidyverse)#
+#
+source("../shared/R/base.R")#
+#
+#--------------------------------------------------------------------#
+# load and parse data#
+# list of source files from Web of Life and IWDB#
+files.wol <- list.files(path='data/web-of-life_2019-02-06_013943', pattern="M_PL", full=TRUE)#
+files.iwdb <- list.files(path='data/iwdb_20190422/matrices', pattern=".csv", full=TRUE)#
+#
+# load the matrices as a list#
+webs.wol <- lapply(files.wol, function(x) read.csv(x, row.names=1, strip.white=TRUE))#
+names(webs.wol) <- gsub("data/web-of-life_.+/(.+)\\.csv", "\\1", files.wol)#
+#
+webs.iwdb <- lapply(files.iwdb, function(x) read.csv(x, row.names=1, strip.white=TRUE))#
+names(webs.iwdb) <- gsub("[ ,]", "-", gsub("data/iwdb_.+/matrices/(.+)\\.csv", "\\1", files.iwdb))#
+#
+webs <- c(webs.wol, webs.iwdb)#
+length(webs) # 167!#
+#
+webs <- lapply(webs, function(w){ row.names(w) <- gsub("(.+) $", "\\1", row.names(w)); return(w)})#
+# check size#
+length(which(lapply(webs, nrow) >= 15)) # hmmm. 75 you say?
+?break()
+?break
+library(bipartite)#
+library(codependent)#
+library(igraph)#
+library(reshape)#
+library(stringr)#
+#
+require("MASS")#
+require("lme4")#
+require("nlme")#
+require("MuMIn")#
+#
+library(tidyverse)#
+#
+source("../shared/Rscripts/base.R")#
+source("../shared/Rscripts/base_graphics.R")#
+#
+#--------------------------------------------------------------------#
+# load and parse data#
+#
+# floral symmetry annotations#
+symm <- read.csv("data/spp_symmetry.csv", h=TRUE)#
+#
+table(symm$symmetry)#
+#
+spp.z <- subset(symm, symmetry=="zygomorphic")$user_supplied_name#
+spp.a <- subset(symm, symmetry=="actinomorphic")$user_supplied_name#
+#
+# list of source files from Web of Life#
+file.list <- list.files(path='data/web-of-life_2019-02-06_013943', pattern="M_PL", full=TRUE)#
+#
+# load the matrices as a list#
+webs <- lapply(file.list, function(x) read.csv(x, row.names=1))#
+names(webs) <- gsub("data/web-of-life_.+/(.+)\\.csv", "\\1", file.list)
+require("bipartite")
+?networklevel
+refs <- read.csv("/Users/jyoder/Documents/Academic/Active_projects/pollination_networks/data/references_all.csv")
+length(unique(refs$Reference))
+require("tidyverse")#
+#
+source("~/Documents/Academic/Active_projects/shared/Rscripts/base.R") # my special mix of personal functions#
+source("~/Documents/Academic/Active_projects/shared/Rscripts/base_graphics.R")
+dat = read.csv("~/Documents/Academic/2019/2019_grants/NatGeo_2019/MASTER_Elev_FieldDatasheetsCitizenScience2016_21March2016.csv", h=T, sep="\t")
+head(dat)
+dat = read.csv("~/Documents/Academic/2019/2019_grants/NatGeo_2019/MASTER_Elev_FieldDatasheetsCitizenScience2016_21March2016.csv", h=T)
+head(dat)
+ggplot(dat, aes(x=total.height)) + geom_histogram() + facet_wrap(ncol=1, "Transect")
+grades <- read.csv("/Users/jyoder/Documents/Academic/2019/2019_teaching/Evolution/grades/2019-10-14T1719_Grades-BIOL_322-17237-FA2019.csv")
+head(grades)
+grades <- read.csv("/Users/jyoder/Documents/Academic/2019/2019_teaching/Evolution/grades/2019-10-14T1719_Grades-BIOL_322-17237-FA2019.csv", skip=2)
+head(grades)
+grades <- read.csv("/Users/jyoder/Documents/Academic/2019/2019_teaching/Evolution/grades/2019-10-14T1719_Grades-BIOL_322-17237-FA2019.csv")
+head(grades)
+hist(grades$Midterm.Exam.I..539205.)
+summary(grades)
+28.17/50
+75/2
+require("tidyverse")#
+#
+source("~/Documents/Academic/Active_projects/shared/Rscripts/base.R") # my special mix of personal functions#
+source("~/Documents/Academic/Active_projects/shared/Rscripts/base_graphics.R")#
+#
+require(fields)
+sites = read.csv("~/Documents/Academic/Active_projects/plant-associate-lit-search/data/Garrido2012/Garrido2012.txt", h=T, sep="\t")
+sites
+sites <- read.csv("~/Documents/Academic/Active_projects/plant-associate-lit-search/data/Garrido2012/Garrido2012.txt", h=T, sep="\t")
+Gdists <- rdist.earth(sites[,c("Lon","Lat")],sites[,c("Lon","Lat")], miles=FALSE)
+Gdists
+colnames(Gdists) <- rownames(Gdists) <- sites$Site#
+Gdists[Gdists<1e-3] <- 0#
+Gdists <- as.data.frame(Gdists)%>% gather("To", "Gdist") %>% mutate(From = rep(rownames(Gdists), ncol(Gdists))) %>% filter(!is.na(Gdist)) %>% select(From, To, Gdist) -> Gdists
+Gdists
+write.table(Gdists, "~/Documents/Academic/Active_projects/plant-associate-lit-search/data/Garrido2012/geo-dists.txt", sep="\t", quote=FALSE, col.names=TRUE, row.names=FALSE)
+setwd("~/Documents/Academic/Active_projects/plant-associate-lit-search/data/Yu2019")#
+#
+require("tidyverse")#
+#
+source("~/Documents/Academic/Active_projects/shared/Rscripts/base.R") # my special mix of personal functions#
+source("~/Documents/Academic/Active_projects/shared/Rscripts/base_graphics.R")#
+#
+require("fields")#
+#-------------------------------------------------------------------------#
+# read and prep in data#
+#
+sites = read.csv("~/Documents/Academic/Active_projects/plant-associate-lit-search/data/Yu2019/Yu2019_sites.txt", h=T, sep="\t")#
+#
+plant.Fst = read.csv("~/Documents/Academic/Active_projects/plant-associate-lit-search/data/Yu2019/Fhirt_Gst.gdv", h=T, sep="\t", row.names="Obs.")#
+plant.Fst[lower.tri(plant.Fst)] <- NA#
+plant.Fst %>% gather("To", "Fst") %>% mutate(From = rep(rownames(plant.Fst), ncol(plant.Fst))) %>% filter(!is.na(Fst)) %>% select(From, To, Fst) -> plant.Fst#
+head(plant.Fst)#
+assoc.Fst = read.csv("~/Documents/Academic/Active_projects/plant-associate-lit-search/data/Yu2019/Valisia_Gst.gdv", h=T, sep="\t", row.names="Obs.")#
+assoc.Fst[lower.tri(assoc.Fst)] <- NA#
+assoc.Fst %>% gather("To", "Fst") %>% mutate(From = rep(rownames(assoc.Fst), ncol(assoc.Fst))) %>% filter(!is.na(Fst)) %>% select(From, To, Fst) -> assoc.Fst#
+head(assoc.Fst)
+head(sites)#
+#
+Gdists <- rdist.earth(as.matrix(sites[,c("Lon","Lat")]),as.matrix(sites[,c("Lon","Lat")]), miles=FALSE) #guhhh#
+colnames(Gdists) <- rownames(Gdists) <- sites$Site#
+Gdists[Gdists<1e-3] <- 0#
+Gdists[lower.tri(Gdists)] <- NA#
+#
+Gdists <- as.data.frame(Gdists)%>% gather("To", "Gdist") %>% mutate(From = rep(rownames(Gdists), ncol(Gdists))) %>% filter(!is.na(Gdist)) %>% select(From, To, Gdist) -> Gdists#
+#
+Gdists
+head(plant.Fst)
+head(assoc.Fst)
+?left_join
+alldists <- plant.Fst %>% left_join(assoc.Fst, by=c("From","To"), suffix=c(".plant",".assoc")) %>% left_join(Gdists, by=c("From","To"))
+alldists
+head(alldists)
+dim(plant.Fst)
+head(plant.Fst)
+dim(assoc.Fst)
+head(assoc.Fst)
+dim(Gdists)
+head(Gdists)
+length(intersect(colnames(plant.Fst),colnames(assoc.Fst)))
+intersect(colnames(plant.Fst),colnames(assoc.Fst))
+intersect(plant.Fst$From, assoc.Fst$From)
+alldists <- plant.Fst %>% inner_join(assoc.Fst, by=c("From","To"), suffix=c(".plant",".assoc")) %>% inner_join(Gdists, by=c("From","To"))
+dim(alldists)
+head(alldists)
+?lower.tri
+plant.Fst = read.csv("~/Documents/Academic/Active_projects/plant-associate-lit-search/data/Yu2019/Fhirt_Gst.gdv", h=T, sep="\t", row.names="Obs.")#
+plant.Fst[lower.tri(plant.Fst, diag=TRUE)] <- NA#
+plant.Fst %>% gather("To", "Fst") %>% mutate(From = rep(rownames(plant.Fst), ncol(plant.Fst))) %>% filter(!is.na(Fst)) %>% select(From, To, Fst) -> plant.Fst#
+head(plant.Fst)#
+assoc.Fst = read.csv("~/Documents/Academic/Active_projects/plant-associate-lit-search/data/Yu2019/Valisia_Gst.gdv", h=T, sep="\t", row.names="Obs.")#
+assoc.Fst[lower.tri(assoc.Fst, diag=TRUE)] <- NA#
+assoc.Fst %>% gather("To", "Fst") %>% mutate(From = rep(rownames(assoc.Fst), ncol(assoc.Fst))) %>% filter(!is.na(Fst)) %>% select(From, To, Fst) -> assoc.Fst#
+head(assoc.Fst)#
+# calculate GS distances between sites#
+head(sites)#
+#
+Gdists <- rdist.earth(as.matrix(sites[,c("Lon","Lat")]),as.matrix(sites[,c("Lon","Lat")]), miles=FALSE) #guhhh#
+colnames(Gdists) <- rownames(Gdists) <- sites$Site#
+Gdists[Gdists<1e-3] <- 0#
+Gdists[lower.tri(Gdists, diag=TRUE)] <- NA#
+#
+Gdists <- as.data.frame(Gdists)%>% gather("To", "Gdist") %>% mutate(From = rep(rownames(Gdists), ncol(Gdists))) %>% filter(!is.na(Gdist)) %>% select(From, To, Gdist) -> Gdists#
+#
+Gdists
+dim(plant.Fst)#
+head(plant.Fst)#
+dim(assoc.Fst)#
+head(assoc.Fst)#
+dim(Gdists)#
+head(Gdists)
+intersect(plant.Fst$From, assoc.Fst$From)
+alldists <- plant.Fst %>% inner_join(assoc.Fst, by=c("From","To"), suffix=c(".plant",".assoc")) %>% inner_join(Gdists, by=c("From","To"))#
+#
+dim(alldists)#
+head(alldists)
+write.table(alldists, "~/Documents/Academic/Active_projects/plant-associate-lit-search/data/Yu2019/Yu2019-all-dists.txt", sep="\t", quote=FALSE, col.names=TRUE, row.names=FALSE)
+require("lme4")
+dat = read.csv("data/plant-associate-lit-search_Fst.tsv", h=T, sep="\t")
+dat = read.csv("data/plant-associate-lit-search_Fst.tsv", h=T, sep="\t")#
+#
+head(dat)#
+#
+hist(dat$Plant.Fst)#
+hist(dat$Assoc.Fst)#
+hist(dat$Geog.dist.km)#
+#
+dat <- dat %>% mutate(pfst.x = Plant.Fst/(1-Plant.Fst), afst.x = Assoc.Fst/(1-Assoc.Fst), geo.x = log10(Geog.dist.km))
+dat = read.csv("data/plant-associate-lit-search_Fst.tsv", h=T, sep="\t")
+dat = read.csv("data/plant-associate-lit-search_Fst.tsv", h=T, sep="\t")
+dat = read.csv("/Users/jyoder/Documents/Academic/Active_projects/plant-associate-lit-search/data/plant-associate-lit-search_Fst.tsv", h=T, sep="\t")
+dat = read.csv("~/Documents/Academic/Active_projects/plant-associate-lit-search/data/plant-associate-lit-search_Fst.tsv", h=T, sep="\t")
+getwd()
+setwd("~/Documents/Academic/Active_projects/plant-associate-lit-search")
+dat = read.csv("data/plant-associate-lit-search_Fst.tsv", h=T, sep="\t")
+head(dat)#
+#
+hist(dat$Plant.Fst)#
+hist(dat$Assoc.Fst)#
+hist(dat$Geog.dist.km)
+dat <- dat %>% mutate(pfst.x = Plant.Fst/(1-Plant.Fst), afst.x = Assoc.Fst/(1-Assoc.Fst), geo.x = log10(Geog.dist.km))
+cor.test(~afst.x+geo.x, data=dat, method="spearman") # rho = 0.46, p < 2.2e-16
+cor.test(~afst.x+pfst.x, data=dat, method="spearman") # rho = 0.43, p < 2.2e-16
+cor.test(~pfst.x+geo.x, data=dat, method="spearman") # rho = 0.42, p < 2.2e-16
+mlm.all <- lmer(Assoc.Fst~Plant.Fst+Geog.dist.km+(1|DOI), data=dat)
+summary(mlm.all)
+ag <- lm(Assoc.Fst~Geog.dist.km, data=dat)#
+#
+ag$residuals#
+#
+dat$Assoc.resid[!is.na(dat$Geog.dist.km)] <- ag$residuals#
+#
+#-------------------------------------------------------------------------#
+# Visualization#
+#
+ggplot(dat, aes(x=Plant.Fst, y=Assoc.resid, color=Author)) + geom_point(alpha=0.3) + geom_smooth(method="lm", se=FALSE)

@@ -1,0 +1,37 @@
+Sort	Population	Type	Pollinator	lat_dec	lon_dec	Synonyms	JotrGen	JotrPhen	MothGen	MothPhen
+7	CactusFlats	western	synthetica	36.2113	117.9352		13	10	5	6
+11	ClaytonValley	western	synthetica	37.5833	117.7333		8		5	1
+9	EurekaValley	western	synthetica	37.379	117.8277		15	10	8	9
+5	FossilBedRd	western	synthetica	35.0033	117.0339			9	6	5
+3	FreemontPk	western	synthetica	34.2363	117.4855	Freemont Mountains	15		5	
+10	GoldPoint	western	synthetica	37.3589	117.3697		10	10	5	1
+1	JoshuaTree	western	synthetica	34.1368	116.1604	"Yucca Valley	 JoTr NP"	15	8	10	2
+4	KramerHills	western	synthetica	34.903	117.4853		15	10	17	5
+6	LancasterPalmdale	western	synthetica	34.7733	118.5039	"Lancaster	 Palmdale"		10	8	1
+12	MontezumaPk	western	synthetica	37.7407	117.2616		9		3	1
+13	NevTestSite	western	synthetica	36.9599	116.0681			10	8	4
+14	NevTestSiteII	western	synthetica	36.9794	115.9895		16	10	6	3
+2	SanAndreas	western	synthetica	34.4762	116.8069		8	10		3
+8	Trona	western	synthetica	35.4757	117.5869		15	10	4	2
+15	TVSouth	western	synthetica	37.3744	115.5142		16		2	
+31	AlamoCross	eastern	antithetica	34.8062	114.0738			6		8
+34	AlamoLake	eastern	antithetica	34.1998	113.3933		10	2	4	2
+28	Cima	eastern	antithetica	35.3638	115.5887		15		5	
+18	DelamarVal	eastern	antithetica	37.5249	114.8158		15	8	5	3
+30	DolanSprings	eastern	antithetica	35.5982	114.26		15	9	2	1
+19	EightmileVal	eastern	antithetica	37.374	115.0304		10	10	6	5
+17	HancockSummit	eastern	antithetica	37.4158	115.3901		12	10		
+25	IndianRidge	eastern	antithetica	36.5007	115.6897		9	10	4	1
+33	JoshuaTreePkwy	eastern	antithetica	34.2258	113.0736	Wickenburg	14	10	8	
+27	KingstonMtns	eastern	antithetica	35.7673	115.8414	"Kingston Road	 Jean	 Potosi Cyn"	14	10	11	2
+26	KyleCanyon	eastern	antithetica	36.2667	115.515			4	4	
+22	Sawmill	eastern	antithetica	36.7068	115.0423			10		4
+29	Searchlight	eastern	antithetica	35.5201	115.1405		15	6	4	2
+21	SheepPass	eastern	antithetica	36.8292	115.2988		3	10	5	
+20	SheepRange	eastern	antithetica	37.1783	115.1852		4	6		5
+23	Shivwitts	eastern	antithetica	37.0638	113.8969		12		10	4
+32	Wikieup	eastern	antithetica	34.6803	113.6921		15	10	18	
+24	YuccaForest	eastern	antithetica	36.4781	115.0577		15	10	6	
+16	TikabooValley	contact	NA	37.4816	115.506		75	26		
+16.2	TVanti	contact	antithetica	37.4816	115.506				10	
+16.1	TVsyn	contact	synthetica	37.4816	115.506				10	

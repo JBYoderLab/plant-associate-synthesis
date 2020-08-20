@@ -1,0 +1,11 @@
+From	To	Gdist
+Petit	Montagne	21.57
+Petit	Bagne	51.5
+Petit	Nouragues	122
+Petit	Kaw	116.5
+Montagne	Bagne	30.55
+Montagne	Nouragues	109.62
+Montagne	Kaw	94.95
+Bagne	Nouragues	92.59
+Bagne	Kaw	64.36
+Nouragues	Kaw	83.73
