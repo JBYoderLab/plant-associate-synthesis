@@ -1,3 +1,8 @@
+# stuff we don't want to sync across platforms
+papers/
+data/raw/
+output/models/
+
 # History files
 .Rhistory
 .Rapp.history
